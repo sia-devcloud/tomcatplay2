@@ -63,7 +63,7 @@
     - name: allow remote hosts for manager
       ansible.builtin.template:
         src: templates/manager-context.xml.j2
-        dest: "{{homedirectory_after}}"/webapps/manager/META-INF/context.xml
+        dest: "{{homedirectory_after}}/webapps/manager/META-INF/context.xml"
         owner: "{{ user }}"
         group: "{{ group }}"
         mode: '0640'
