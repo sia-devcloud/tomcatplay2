@@ -41,7 +41,7 @@
         msg: "tomcat is downloaded and extracted to {{ home_dir  }}"
     - name: find all the shell files
       find:
-        paths: "/opt/tomcat/apache-tomcat-10.0.10/bin"
+        paths: "homedirectory-after/bin"
         patterns: '*.sh'
       register: shell_files
     - name: change permissions to execute
@@ -54,7 +54,7 @@
     - name: create tomcat application accounts
       ansible.builtin.template:
         src: templates/tomcat-users.xml.j2
-        dest: "/opt/tomcat/apache-tomcat-10.0.10/conf/tomcat-users.xml"
+        dest: "homedirectory-after/conf/tomcat-users.xml"
         owner: "{{ user }}"
         group: "{{ group }}"
         mode: '0600'
@@ -63,7 +63,7 @@
     - name: allow remote hosts for manager
       ansible.builtin.template:
         src: templates/manager-context.xml.j2
-        dest: "/opt/tomcat/apache-tomcat-10.0.10/webapps/manager/META-INF/context.xml"
+        dest: "homedirectory-after/webapps/manager/META-INF/context.xml"
         owner: "{{ user }}"
         group: "{{ group }}"
         mode: '0640'
@@ -72,7 +72,7 @@
     - name: allow remote hosts for host-manager
       ansible.builtin.template:
         src: templates/hostmanager-context.xml.j2
-        dest: "/opt/tomcat/apache-tomcat-10.0.10/webapps/host-manager/META-INF/context.xml"
+        dest: "homedirectory-after/webapps/host-manager/META-INF/context.xml"
         owner: "{{ user }}"
         group: "{{ group }}"
         mode: '0640'
