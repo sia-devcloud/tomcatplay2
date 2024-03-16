@@ -41,7 +41,7 @@
         msg: "tomcat is downloaded and extracted to {{ home_dir  }}"
     - name: find all the shell files
       find:
-        paths: homedirectory-after/bin
+        paths: "homedirectory-after/bin"
         patterns: '*.sh'
       register: shell_files
     - name: change permissions to execute
