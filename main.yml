@@ -54,7 +54,7 @@
     - name: create tomcat application accounts
       ansible.builtin.template:
         src: templates/tomcat-users.xml.j2
-        dest: {{homedirectory_after}}/conf/tomcat-users.xml
+        dest: "{{homedirectory_after}}"/conf/tomcat-users.xml
         owner: "{{ user }}"
         group: "{{ group }}"
         mode: '0600'
