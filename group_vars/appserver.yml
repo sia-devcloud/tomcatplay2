@@ -7,5 +7,5 @@ user_shell: '/bin/false'
 tomcat_url: "https://archive.apache.org/dist/tomcat/tomcat-10/v10.0.10/bin/apache-tomcat-10.0.10.tar.gz"
 tomcat_user: shahin
 tomcat_pass: shahin@12345
-homedirectory-after: '/opt/tomcat/apache-tomcat-10.0.10'
-allowedipaddress: "3.110.106.188"
+homedirectory_after: '/opt/tomcat/apache-tomcat-10.0.10'
+allowedipaddress: ".*"
